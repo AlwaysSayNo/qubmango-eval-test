@@ -1,0 +1,280 @@
+apiVersion: governance.nazar.grynko.com/v1alpha1
+kind: ManifestRequestTemplate
+metadata:
+  name: mrt-my
+  namespace: test-ns
+spec:
+  version: 1
+  gitRepository:
+    ssh:
+      url: git@github.com:AlwaysSayNo/qubmango-eval-test.git
+      # Matches the ssh secret name and namespace
+      secretsRef:
+        name: ssh-secret-my
+        namespace: test-ns
+  pgp:
+    publicKey: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+      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
+      =5xvW
+      -----END PGP PUBLIC KEY BLOCK-----
+    # Matches the operator pgp secret name and namespace
+    secretsRef:
+      name: pgp-secret-my
+      namespace: test-ns
+  notifications:
+    slack:
+      # Matches the Slack secret name and namespace
+      secretsRef:
+        name: slack-secret-my
+        namespace: test-ns
+  argoCD:
+    # Matches the ArgoCD Application name and namespace
+    application:
+      name: application-my
+      namespace: argocd
+  # The folder within the repository where Qubmango will store its operational files.
+  # In this folder Qubmango will create a subfolder ".qubmango" to store its files (e.g., MSR, MCA, signatures, etc.).
+  # For this example, we use repository root folder
+  # (e.g. if governanceFolderPath: `gov`, the end operational folder would be `gov/.qubmango`).
+  governanceFolderPath: ""
+  # The names and namespaces of the Manifest Signing Request, created by Qubmango controller
+  msr:
+    name: msr-my
+    namespace: test-ns
+  # The names and namespaces of the Manifest Change Approval, created by Qubmango controller
+  mca:
+    name: mca-my
+    namespace: test-ns
+  governors:
+    notificationChannels:
+      # The Slack channel ID where notifications will be sent
+      - slack:
+          channelID: C0A1F5AD32D
+    # The PGP public keys of the quorum members
+    members:
+      - alias: owner
+        publicKey: |
+          -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+          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
+          5zeAgFAtNR4ibS55vjIXlEqPu3l1hAw=
+          =A6KX
+          -----END PGP PUBLIC KEY BLOCK-----
+      - alias: voter1
+        publicKey: |
+          -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+          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
+          =oUei
+          -----END PGP PUBLIC KEY BLOCK-----
+      - alias: voter2
+        publicKey: |
+          -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+          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
+          =WV7W
+          -----END PGP PUBLIC KEY BLOCK-----
+  # The governance policy for approving manifest changes.
+  # In this example, the owner must always approve, and at least one voter must approve.
+  governancePolicy:
+  require:
+    all: true
+    require:
+      - signer: owner
+      - atLeast: 1
+        require:
+          - signer: voter1
+          - signer: voter2
