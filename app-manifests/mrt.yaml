@@ -7,7 +7,7 @@ spec:
   version: 1
   gitRepository:
     ssh:
-      url:
+      url: git@github.com:AlwaysSayNo/qubmango-eval-test.git
       # Matches the ssh secret name and namespace
       secretsRef:
         name: ssh-secret-my
@@ -99,7 +99,7 @@ spec:
     notificationChannels:
       # The Slack channel ID where notifications will be sent
       - slack:
-          channelID:
+          channelID: C0A1F5AD32D
     # The PGP public keys of the quorum members
     members:
       - alias: owner
@@ -269,7 +269,6 @@ spec:
           -----END PGP PUBLIC KEY BLOCK-----
   # The governance policy for approving manifest changes.
   # In this example, the owner must always approve, and at least one voter must approve.
-  governancePolicy:
   require:
     all: true
     require:
